@@ -1,0 +1,49 @@
+baseURL = "https://sdd2024.netlify.app"
+title = "Swiss Digital Days 2024"
+
+languageCode = "fr"
+defaultContentLanguage = "fr"
+defaultContentLanguageInSubdir = true
+
+cleanDestinationDir = true
+disableFastRender = true
+removePathAccents = true
+
+disableKinds = [ "taxonomy", "term", "robotsTXT", "RSS", "sitemap", "404"]
+
+[markup.goldmark.parser.attribute]
+block = true
+
+[markup.goldmark.renderer]
+unsafe = true
+
+[minify]
+minifyOutput = true
+
+# Configuration du français 
+[languages.fr]
+contentDir = "content/fr"
+languageName = "Français"
+weight = 10
+
+[languages.fr.params]
+title = "Spot in Bienne"
+footer = "Un projet de la [Ville de Bienne](https://www.biel-bienne.ch/) et [Spot in](https://spotin.ch/)."
+
+annonce = """Cette page est présente pour des raisons techniques.
+
+Merci de continuer la navigation jusqu'à trouver une page sans cette mention."""
+
+# Configuration de l'allemand
+[languages.de]
+contentDir = "content/de"
+languageName = "Deutsch"
+weight = 20
+
+[languages.de.params]
+title = "Spot in Biel"
+footer = "Ein Projekt der [Stadt Biel](https://www.biel-bienne.ch/) und [Spot in](https://spotin.ch/)."
+
+annonce ="""Diese Seite ist aus technischen Gründen vorhanden.
+
+Bitte setzen Sie die Navigation fort, bis Sie eine Seite ohne diesen Hinweis finden."""

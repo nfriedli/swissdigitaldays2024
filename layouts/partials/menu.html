@@ -1,0 +1,20 @@
+<div class="tabs-selector">
+    
+        
+        {{ $current := .Page }}
+        {{ with .Parent}}
+        <ul class="tabs">
+
+            {{ range .Pages }}
+            <li class="tabs-item {{ if eq $current .Page }} active {{ end }}">
+                <a href="{{ .RelPermalink }}">
+                    <div class="tabs-item-text">
+                        {{ with .Params.logo }}{{ printf "<i class=\"fa-solid fa-%s\"></i>" . | safeHTML}}{{ end }}
+                        {{ .Title }}
+                    </div>
+                </a>
+            </li>
+            {{ end }}
+        </ul>
+        {{ end}}
+</div>

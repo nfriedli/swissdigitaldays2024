@@ -1,0 +1,12 @@
+{{ define "main" }}
+
+      {{ site.Params.annonce | .RenderString }}
+
+      {{/* Sous-pages seulement sur les listes (jamais référencées) */}}
+
+      <ul>
+      {{ range .Pages }}
+            <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+      {{ end }}
+      </ul>
+{{ end }}

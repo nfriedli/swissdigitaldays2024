@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ .Title }} - {{ with .Parent }}{{ .Title }} - {{ end}} {{ site.Title }}</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+
+    {{ $style := resources.Get "css/main.css" | minify | fingerprint }}
+    <link href="{{ $style.RelPermalink }}" rel="stylesheet" type="text/css">
+    <meta name="robots" content="noindex">
+    {{ if .IsTranslated }}
+    {{ range .AllTranslations }}
+        <link rel="alternate" hreflang="{{ .Lang }}" href="{{ .Permalink }}" />
+        {{ end}}
+    {{ end }}
+
+    <script defer data-domain="strandboden.netlify.app" src="https://plausible.io/js/script.js"></script>
+
+</head>
+
+<body>
+    <header class="header">
+        <div class="row">
+            <div class="col">
+                <img height="55" align="left" src="/public/images/03_Stadt-Biel-Hauptlogo-20190827-Rot-RGB.png" />
+            </div>
+            <div class="col">
+                {{ partial "lang" . }}
+            </div>
+        </div>
+    </header>
+    <main>
+        <article>
+            <header>
+                {{ site.Params.slogan | .RenderString }}
+                <h1>{{ block "title" .}}{{ .Title }} {{ end }}</h1>
+            </header>
+
+            {{ block "menu". }}{{ end }}
+
+            <div class="content">
+                {{ block "main" . }}{{ end }}
+            </div>
+        </article>
+    </main>
+    <footer>
+        <div class="row">
+            <div class="col">
+                {{ site.Params.footer | .RenderString }}
+            </div>
+            <div class="col">
+
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
