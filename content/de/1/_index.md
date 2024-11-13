@@ -1,3 +1,3 @@
 +++
-title = "Poste 1"
+title = "Posten 1"
 +++
