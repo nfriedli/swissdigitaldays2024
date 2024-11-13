@@ -27,7 +27,7 @@ languageName = "Français"
 weight = 10
 
 [languages.fr.params]
-title = "Spot in Bienne"
+title = "Swiss Digital Days 2024"
 footer = "Un projet de la [Ville de Bienne](https://www.biel-bienne.ch/) et [Spot in](https://spotin.ch/)."
 
 annonce = """Cette page est présente pour des raisons techniques.
@@ -41,7 +41,7 @@ languageName = "Deutsch"
 weight = 20
 
 [languages.de.params]
-title = "Spot in Biel"
+title = "Swiss Digital Days 2024"
 footer = "Ein Projekt der [Stadt Biel](https://www.biel-bienne.ch/) und [Spot in](https://spotin.ch/)."
 
 annonce ="""Diese Seite ist aus technischen Gründen vorhanden.
